@@ -2,6 +2,8 @@
 
 A closure is a function that references variables from outside its own function body. The function may access and *assign* to the referenced variables.
 
+Bạn nên sử dụng closures khi bạn cần lưu trữ ngữ cảnh, tạo ra các hàm tùy chỉnh hoặc cần một cách an toàn để xử lý trạng thái mà không làm ô nhiễm không gian tên toàn cục.
+
 In this example, the `concatter()` function returns a function that has reference to an *enclosed* `doc` value. Each successive call to `harryPotterAggregator` mutates that same `doc` variable.
 
 ```go

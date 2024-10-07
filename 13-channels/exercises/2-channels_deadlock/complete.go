@@ -5,6 +5,10 @@ import (
 	"time"
 )
 
+// If you don't use a buffer, the sender will block until there's a receiver ready to read from the channel, 
+// and the receiver will block until there's a value available in the channel to read. 
+// This way, the sending and receiving can happen in parallel, without deadlock, if done correctly.
+
 func filterOldEmails(emails []email) {
 	isOldChan := make(chan bool)
 

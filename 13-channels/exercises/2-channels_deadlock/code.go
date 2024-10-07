@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"time"
 )
-The deadlock in your code occurs because you're sending to the isOldChan channel more times than you're receiving from it. Here's why:
-
-In the loop, you're sending a bool to the channel (isOldChan <- true or isOldChan <- false) for each email in the emails slice.
-After the loop ends, you're receiving from the channel three times (<-isOldChan). However, if the number of emails in the emails slice exceeds three, 
-you'll send more values than you're receiving, causing the deadlock.
+//The deadlock in your code occurs because you're sending to the isOldChan channel more times than you're receiving from it. Here's why:
+//In the loop, you're sending a bool to the channel (isOldChan <- true or isOldChan <- false) for each email in the emails slice.
+//After the loop ends, you're receiving from the channel three times (<-isOldChan). However, if the number of emails in the emails slice exceeds three, 
+//you'll send more values than you're receiving, causing the deadlock.
 
 
 func filterOldEmails(emails []email) {
